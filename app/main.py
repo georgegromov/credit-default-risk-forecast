@@ -1,6 +1,5 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import numpy as np
 import pickle
@@ -49,12 +48,6 @@ class ClientData(BaseModel):
     PAY_AMT6: float
 
 
-@app.get("/", response_class=HTMLResponse)
-def root():
-    with open("/app/static/index.html", "r", encoding="utf-8") as f:
-        return f.read()
-
-
 @app.post("/predict")
 def predict(data: ClientData):
     try:
@@ -75,3 +68,7 @@ def predict(data: ClientData):
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+# Статика (index.html, styles.css, script.js) — монтировать последним
+app.mount("/", StaticFiles(directory="/app/static", html=True), name="static")

@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+}
+header {
+  background: #1a3c5e;
+  color: white;
+  padding: 20px 40px;
+}
+header h1 {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+header p {
+  font-size: 0.85em;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.card h2 {
+  font-size: 1em;
+  color: #1a3c5e;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #e8f0fe;
+  padding-bottom: 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.field label {
+  display: block;
+  font-size: 0.75em;
+  color: #666;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.field input,
+.field select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #dde3ec;
+  border-radius: 6px;
+  font-size: 0.9em;
+  outline: none;
+  transition: border 0.2s;
+}
+.field input:focus,
+.field select:focus {
+  border-color: #1a3c5e;
+}
+.btn {
+  width: 100%;
+  background: #1a3c5e;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #254d78;
+}
+.result {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+.result.default {
+  background: #fff0f0;
+  border: 2px solid #e53935;
+}
+.result.no-default {
+  background: #f0fff4;
+  border: 2px solid #43a047;
+}
+.result .verdict {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.result.default .verdict {
+  color: #e53935;
+}
+.result.no-default .verdict {
+  color: #43a047;
+}
+.result .prob {
+  font-size: 0.95em;
+  color: #555;
+}
+.result .risk {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.risk-high {
+  background: #fce4e4;
+  color: #c62828;
+}
+.risk-med {
+  background: #fff8e1;
+  color: #f57f17;
+}
+.risk-low {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+.error {
+  color: #e53935;
+  font-size: 0.85em;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
